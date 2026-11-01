@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Resume</title>
+<!--
+  HOW TO USE
+  - Copy to the application folder as resume.html and replace ALL sample content
+    (Jordan Lee is fictional) with facts from career/career-facts.md.
+  - Accent colour: set --accent to suit the industry. Ideas: #0F6E5A teal-green,
+    #1F3A8A deep blue, #6D28D9 violet, #B45309 amber, #9F1239 crimson. Keep it dark enough to print.
+  - .proof cards: keep only for strong, verified numbers; delete the block otherwise.
+  - .ladder: stack titles held at one employer (newest first). Use a single title row if there was one.
+  - Keep everything as real text. No images or icons carrying meaning.
+-->
+<style>
+  :root {
+    --accent: #0F6E5A;
+    --ink: #16181D;
+    --muted: #5A616E;
+    --rule: #D9DDE3;
+    --tint: color-mix(in srgb, var(--accent) 7%, white);
+  }
+  @page { size: A4; margin: 14mm 15mm 14mm 15mm; }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    margin: 0; color: var(--ink); background: #fff;
+    font: 9.6pt/1.42 "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  header { border-left: 3.5pt solid var(--accent); padding: 0 0 0 11pt; margin-bottom: 11pt; }
+  h1 {
+    margin: 0; font: 600 25pt/1.05 "Iowan Old Style", "Palatino", Georgia, serif;
+    letter-spacing: -0.3pt;
+  }
+  .headline { margin: 3pt 0 5pt; font-size: 11.2pt; font-weight: 600; color: var(--accent); }
+  .contact { color: var(--muted); font-size: 8.8pt; }
+  .contact span + span::before { content: "·"; margin: 0 5pt; color: var(--rule); }
+
+  h2 {
+    margin: 13pt 0 6pt; padding-bottom: 3pt; border-bottom: 0.75pt solid var(--rule);
+    font-size: 9.4pt; font-weight: 700; letter-spacing: 0; text-transform: uppercase;
+    color: var(--accent); break-after: avoid;
+  }
+  p { margin: 0; }
+  .summary { font-size: 10pt; }
+
+  .proof { display: flex; gap: 7pt; margin-top: 9pt; }
+  .proof div {
+    flex: 1; background: var(--tint); border-radius: 4pt; padding: 6pt 8pt;
+    font-size: 8.4pt; color: var(--muted); line-height: 1.3;
+  }
+  .proof strong {
+    display: block; color: var(--ink); font: 600 12.5pt/1.15 "Iowan Old Style", Georgia, serif;
+    margin-bottom: 1pt;
+  }
+
+  .job { margin-bottom: 9pt; break-inside: avoid-page; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10pt; }
+  .org { font-weight: 700; font-size: 10.4pt; }
+  .where { color: var(--muted); font-size: 8.8pt; white-space: nowrap; }
+  .ladder { margin: 2pt 0 4pt; padding-left: 9pt; border-left: 1.5pt solid var(--rule); }
+  .ladder div { display: flex; justify-content: space-between; gap: 10pt; }
+  .ladder .t { font-weight: 600; }
+  .ladder div:first-child .t { color: var(--accent); }
+  .ladder .d { color: var(--muted); font-size: 8.8pt; white-space: nowrap; }
+  .project { margin: 5pt 0 1pt; font-size: 8.6pt; font-weight: 700; color: var(--muted);
+             text-transform: uppercase; }
+  ul { margin: 2pt 0 0; padding-left: 12pt; }
+  li { margin: 1.6pt 0; }
+  li::marker { color: var(--accent); }
+
+  .job.earlier { break-inside: auto; }
+  .earlier .row { break-after: avoid; }
+  .earlier .row { display: flex; justify-content: space-between; gap: 10pt; margin: 2.5pt 0 0; }
+  .earlier .row b { font-weight: 600; }
+  .earlier .row .d { color: var(--muted); font-size: 8.8pt; white-space: nowrap; }
+  .earlier p.note { color: var(--ink); margin: 0 0 3pt; }
+
+  .skills div { margin: 2pt 0; }
+  .skills b { font-weight: 600; }
+  .two { display: flex; gap: 18pt; }
+  .two > section { flex: 1; }
+  .small li, .small p { font-size: 9.2pt; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Jordan Lee</h1>
+  <p class="headline">Data Platform Leader · Analytics Engineering</p>
+  <p class="contact">
+    <span>Lisbon · remote (EU)</span>
+    <span>+351 900 000 000</span>
+    <span><a href="mailto:jordan@example.com">jordan@example.com</a></span>
+    <span><a href="https://linkedin.com/in/example">linkedin.com/in/example</a></span>
+    <span><a href="https://github.com/example">github.com/example</a></span>
+  </p>
+</header>
+
+<section>
+  <h2>Summary</h2>
+  <p class="summary">Eleven years in data engineering, the last five leading platform teams. Leads a 7-person team across two countries and rebuilt a retail client’s batch platform on dbt and Snowflake, cutting the nightly run from 6 hours to 70 minutes.</p>
+  <div class="proof">
+    <div><strong>6 h → 70 min</strong>nightly pipeline run after the dbt and Snowflake rebuild</div>
+    <div><strong>~400 analysts</strong>served by the platform at a retail client</div>
+    <div><strong>7-person team</strong>data engineers across two countries</div>
+  </div>
+</section>
+
+<section>
+  <h2>Experience</h2>
+
+  <div class="job">
+    <div class="job-head"><span class="org">Example Analytics</span><span class="where">Lisbon · remote</span></div>
+    <div class="ladder">
+      <div><span class="t">Senior Data Engineering Manager</span><span class="d">Jan 2024 – Present</span></div>
+      <div><span class="t">Data Engineering Manager</span><span class="d">Mar 2021 – Dec 2023</span></div>
+    </div>
+    <p class="project">Retail analytics platform</p>
+    <ul>
+      <li>Lead a team of 7 data engineers across two countries, owning hiring, mentoring and delivery planning</li>
+      <li>Rebuilt the batch pipeline platform on dbt and Snowflake, cutting the nightly run from 6 hours to 70 minutes</li>
+      <li>Platform now serves about 400 internal analysts at a retail client</li>
+    </ul>
+  </div>
+
+  <div class="job earlier">
+    <div class="job-head"><span class="org">Earlier career</span><span class="where">2015 – 2021</span></div>
+    <div class="row"><span><b>Sample Bank</b>, Data Engineer</span><span class="d">Jun 2017 – Feb 2021</span></div>
+    <p class="note">Built streaming fraud-feature pipelines on Kafka and Spark.</p>
+    <div class="row"><span><b>Demo Consulting</b>, Analyst</span><span class="d">Sep 2015 – May 2017</span></div>
+    <p class="note">SQL reporting for supply-chain clients.</p>
+  </div>
+</section>
+
+<section class="skills">
+  <h2>Skills</h2>
+  <div><b>Data:</b> dbt, Snowflake, Spark, Kafka, Airflow, SQL, Python</div>
+  <div><b>Leadership:</b> hiring, mentoring, delivery planning</div>
+</section>
+
+<div class="two small">
+  <section>
+    <h2>Education</h2>
+    <p><b>MSc Computer Science</b>, Example University · 2015</p>
+    <h2>Certifications</h2>
+    <p>Snowflake SnowPro Core</p>
+  </section>
+  <section>
+    <h2>Projects</h2>
+    <p><b>open-pipelines</b> · open-source dbt test library, 300 stars</p>
+  </section>
+</div>
+
+</body>
+</html>
